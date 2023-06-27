@@ -30,6 +30,13 @@ const stor = {
 const app = express();
 app.use(express.json());
 
+app.post('/api/user/login', (req, res) => {
+
+    const returnObject = { id: 1, mail: "test@mail.ru" };
+    res.status(201);
+    res.json(returnObject);
+})
+
 app.get('/api/books', (req, res) => {
     const {books} = stor;
     res.json(books);
